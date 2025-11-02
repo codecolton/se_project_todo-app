@@ -1,17 +1,19 @@
 # Simple Todo App
 
-Give a brief description of the project here. Feel free to give it a different name.
+This is a Todo App where you can make a list of things you need to get done by a certain deadline.
 
 ## Functionality
 
-Give a more detailed explanation of the project and its functionality.
+Using this app, you can create a list of things to do and set dates for when it needs to be completed. You can also check the box or delete an item from the list to indicate that the task is done or no longer needed.
 
 ## Technology
 
-Give a description of the technologies and techniques used. Pictures, GIFs, or screenshots that detail the project features are recommended.
+- HTML/CSS
+- JavaScript
+- Form Validation
 
 ## Deployment
 
 This project is deployed on GitHub Pages:
 
-- ADD LINK HERE
+- [(https://codecolton.github.io/se_project_todo-app/)]
