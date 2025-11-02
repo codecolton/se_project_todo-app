@@ -15,5 +15,3 @@ Using this app, you can create a list of things to do and set dates for when it 
 ## Deployment
 
 This project is deployed on GitHub Pages:
-
-- [(https://codecolton.github.io/se_project_todo-app/)]
