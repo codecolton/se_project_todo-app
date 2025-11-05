@@ -11,7 +11,6 @@ class Todo {
 
     this._todoCheckboxEl.addEventListener("change", () => {
       this._data.completed = !this._data.completed;
-      console.log(this._data.completed);
     });
   }
 
@@ -32,14 +31,15 @@ class Todo {
     const todoNameEl = this._todoElement.querySelector(".todo__name");
     const todoDate = this._todoElement.querySelector(".todo__date");
 
-    /* const dueDate = new Date(this._data.date);
-  if (!isNaN(this._todoDate.date)) {
-    todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })}`; 
-    */
+    const dueDate = new Date(this._data.date);
+    if (!isNaN(dueDate)) {
+      todoDate.textContent = `Due: ${dueDate.toLocaleString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })}`;
+    }
+
     todoNameEl.textContent = this._data.name;
 
     this._generateCheckboxEl();
