@@ -17,15 +17,10 @@ class FormValidator {
 
   resetValidation() {
     this._formEl.reset();
-    const inputList = Array.from(
-      this._formEl.querySelectorAll(this.inputSelector)
-    );
-    inputList.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
-
-    const buttonElement = this._formEl.querySelector(this.submitButtonSelector);
-    buttonElement.disabled = true;
+    this.toggleButtonState();
   }
 
   showInputError(inputElement, errorMessage) {
@@ -58,13 +53,13 @@ class FormValidator {
     });
   }
 
-  toggleButtonState(inputList, buttonElement) {
-    if (this._hasInvalidInput(inputList)) {
-      buttonElement.classList.add(this.inactiveButtonClass);
-      buttonElement.disabled = true;
+  toggleButtonState() {
+    if (this._hasInvalidInput()) {
+      this._buttonElement.classList.add(this.inactiveButtonClass);
+      this._buttonElement.disabled = true;
     } else {
-      buttonElement.classList.remove(this.inactiveButtonClass);
-      buttonElement.disabled = false;
+      this._buttonElement.classList.remove(this.inactiveButtonClass);
+      this._buttonElement.disabled = false;
     }
   }
 
