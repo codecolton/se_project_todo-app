@@ -21,10 +21,12 @@ function handleCheck(completed) {
   todoCounter.updateCompleted(completed);
 }
 
-function handleDelete(completed) {
+function handleDelete(completed, todoElement) {
   if (completed) {
     todoCounter.updateCompleted(false);
   }
+  todoCounter.updateTotal(false);
+  todoElement.remove();
 }
 
 const generateTodo = (data) => {
@@ -52,6 +54,8 @@ const addTodoPopup = new PopupWithForm({
 
     newTodoValidator.resetValidation();
     addTodoPopup.close();
+
+    todoCounter.updateTotal(true);
   },
 });
 
@@ -70,8 +74,4 @@ section.renderItems();
 addTodoButton.addEventListener("click", () => {
   newTodoValidator.resetValidation();
   addTodoPopup.open();
-});
-
-addTodoCloseBtn.addEventListener("click", () => {
-  addTodoPopup.close();
 });

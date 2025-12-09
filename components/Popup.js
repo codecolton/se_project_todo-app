@@ -4,11 +4,11 @@ class Popup {
     this._popupCloseBtn = this._popupElement.querySelector(".popup__close");
   }
 
-  _handleEscapeClose(evt) {
+  _handleEscapeClose = (evt) => {
     if (evt.key === "Escape") {
       this.close();
     }
-  }
+  };
 
   open() {
     this._popupElement.classList.add("popup_visible");
@@ -23,8 +23,8 @@ class Popup {
   setEventListeners() {
     this._popupElement.addEventListener("mousedown", (evt) => {
       if (
-        this._popupElement.includes("popup__close") ||
-        this._popupElement.includes("popup")
+        evt.target === this._popupElement ||
+        evt.target.classList.contains("popup__close")
       ) {
         this.close();
       }
