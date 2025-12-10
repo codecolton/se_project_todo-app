@@ -18,6 +18,7 @@ class Todo {
 
     this._todoCheckboxEl.addEventListener("change", () => {
       const isChecked = this._todoCheckboxEl.checked;
+      this._completed = isChecked;
       this._handleCheck(isChecked);
     });
   }
